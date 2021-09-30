@@ -18,6 +18,7 @@ mosh_tmux_local_config_file: '{{ mosh_home_directory }}/.tmux.conf.local'
 
 mosh_yarn_sources_list: /etc/apt/sources.list.d/yarn.list
 mosh_node_location: /usr/bin/node
+mosh_node_packages_location: '{{ mosh_home_directory }}/.npm-packages'
 mosh_yarn_location: /usr/bin/yarn
 mosh_n_location: /usr/bin/n
 
@@ -30,3 +31,5 @@ mosh_dbeaver_download_location: /tmp/dbeaver-ce_latest_amd64.deb
 
 mosh_spotify_location: /usr/bin/spotify
 mosh_spotify_sources_list: /etc/apt/sources.list.d/spotify.list
+
+mosh_rust_location: '{{ mosh_home_directory }}/.cargo/bin/rustc'
