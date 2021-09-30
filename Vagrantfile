@@ -16,6 +16,6 @@ Vagrant.configure("2") do |config|
     v.cpus = 2
   end
 
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "ubuntu/focal64"
   config.ssh.forward_agent = true
 end
