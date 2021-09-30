@@ -30,8 +30,22 @@
   when:
     - node_check.rc > 0
 
+- name: Create node packages directory
+  file:
+    path: '{{ mosh_node_packages_location }}'
+    state: directory
+  when:
+    - node_check.rc > 0
+
+- name: Set node packages directory
+  shell: 'npm config set prefix "{{ mosh_node_packages_location }}"'
+  become: yes
+  become_user: "{{ mosh_system_user }}"
+  when:
+    - node_check.rc > 0
+
 - name: Check if n is installed
-  shell: test -e {{ mosh_node_location }}
+  shell: test -e {{ mosh_n_location }}
   register: n_check
   failed_when: n_check.rc == 2
   become: yes
