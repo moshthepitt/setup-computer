@@ -115,6 +115,24 @@
   when:
     - mosh_install_golang == true
 
+- name: Install rust
+  include_tasks: install/rust.yml
+  tags:
+    - install
+    - lang
+    - rust
+  when:
+    - mosh_install_rust == true
+
+- name: Configure rust
+  include_tasks: configure/rust.yml
+  tags:
+    - configure
+    - lang
+    - rust
+  when:
+    - mosh_configure_rust == true
+
 - name: Install dbeaver
   include_tasks: install/dbeaver.yml
   tags:
