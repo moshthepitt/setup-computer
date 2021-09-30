@@ -1,0 +1,14 @@
+---
+- name: Check if rust is installed
+  shell: test -e {{ mosh_rust_location }}
+  register: rust_check
+  failed_when: rust_check.rc == 2
+  become: yes
+  become_user: "{{ mosh_system_user }}"
+
+- name: Download and install rustup
+  shell: "curl --proto '=https' --tlsv1.2 -sSf {{ mosh_rust_download_url }} | sh -s -- -y"
+  become: yes
+  become_user: "{{ mosh_system_user }}"
+  when:
+    - rust_check.rc > 0

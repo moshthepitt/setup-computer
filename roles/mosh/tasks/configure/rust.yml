@@ -1,0 +1,11 @@
+---
+- name: Create completions directory
+  file:
+    path: '{{ mosh_home_directory }}/.config/fish/completions'
+    state: directory
+    recurse: yes
+
+- name: Set rustup fish completions
+  shell: '{{ mosh_home_directory }}/.cargo/bin/rustup completions fish > {{ mosh_home_directory }}/.config/fish/completions/rustup.fish'
+  args:
+    creates: '{{ mosh_home_directory }}/.config/fish/completions/rustup.fish'
