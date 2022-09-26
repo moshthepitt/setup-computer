@@ -1,6 +1,7 @@
 ---
 - name: Pre-install stuff
-  hosts: all
+  hosts: localhost
+  connection: local
   tasks:
     - name: Install sudo if not there
       raw: |
@@ -11,7 +12,8 @@
   become: True
 
 - name: Run mosh role (setup a computer like mosh does)
-  hosts: all
+  hosts: localhost
+  connection: local
   gather_facts: True
   become: True
   roles:

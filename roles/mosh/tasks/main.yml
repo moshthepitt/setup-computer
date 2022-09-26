@@ -23,7 +23,7 @@
     - lang
     - python
   when:
-    - mosh_install_python == true
+    - mosh_configure_python == true
 
 - name: Install fish
   include_tasks: install/fish.yml

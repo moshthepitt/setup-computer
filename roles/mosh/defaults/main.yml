@@ -11,11 +11,10 @@ mosh_gh_token:
 # python
 mosh_install_python: true
 mosh_python_ppa: ppa:deadsnakes/ppa
-mosh_default_python_version: python3.8
-mosh_configure_python: true
+mosh_default_python_version: python3.10
+mosh_configure_python: false
 mosh_python_versions:
   - '{{ mosh_default_python_version }}'
-  - python3.6
   - python3.7
   - python3.9
 mosh_pip_download_url: https://bootstrap.pypa.io/get-pip.py
@@ -104,12 +103,12 @@ mosh_tmux_extra_configs:
 mosh_install_node: true
 mosh_install_yarn: true
 mosh_configure_node: true
-mosh_node_version: 14.x
+mosh_node_version: 16.x
 mosh_yarn_download_url: https://dl.yarnpkg.com/debian/pubkey.gpg
 mosh_yarn_sources_url: https://dl.yarnpkg.com/debian/
 
 # golang
-mosh_install_golang: true
+mosh_install_golang: false
 mosh_golang_download_url: https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 
 # dbeaver
@@ -118,7 +117,7 @@ mosh_dbeaver_download_url: https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 
 # spotify
 mosh_install_spotify: true
-mosh_spotify_download_url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+mosh_spotify_download_url: https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg
 mosh_spotify_repository_url: http://repository.spotify.com stable non-free
 
 # rust
